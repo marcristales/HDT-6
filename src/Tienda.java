@@ -120,12 +120,14 @@ public class Tienda {
 	public void agregarProducto() {
 		
 		Boolean agregar = true;
-		System.out.println("\n Agregar Producto \n");
-		System.out.println("Ingrese la categoria (Ingrese 2 para salir): ");
-		String categoria = input.nextLine().toUpperCase();
+		
 		
 		while (agregar) {
 			
+			System.out.println("\n Agregar Producto \n");
+			System.out.println("Ingrese la categoria (Ingrese 2 para salir): ");
+			String categoria = input.nextLine().toUpperCase();
+
 			if (categoria.equals("2")) {
 				agregar = false;
 			} else {
@@ -152,9 +154,14 @@ public class Tienda {
 						
 					} else {
 						
-						List<String> lista = coleccion.get(categoria);
-						lista.add(productos.get(eleccion));
-						coleccion.put(categoria, lista);
+						if (coleccion.get(categoria) != null) {
+							
+							List<String> lista = coleccion.get(categoria);
+							lista.add(productos.get(eleccion));
+							coleccion.put(categoria, lista);
+							
+						}
+						
 						System.out.println("Producto agregado existosamente");
 						
 					}
