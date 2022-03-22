@@ -1,6 +1,10 @@
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ * @author mario
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -10,18 +14,22 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		Tienda tienda = new Tienda();
 		
+		//Se le pide al usuario ingresar el tipo de MAP a implementar
 		System.out.println("Ingrese que MAP implementara: ");
 		System.out.println("1. HashMAP");
 		System.out.println("2. TreeMAP");
 		System.out.println("3. LinkedHashMap");
 		int option = Integer.parseInt(input.nextLine());
 		
+		//Se inicia Factory y se lee el archivo
 		tienda.initFactory(option);
 		tienda.readFile();
 		
+		//Se consiguen coleccion e inventario de la clase de Tienda
 		IMap<String, List<String>> coleccion = tienda.getColeccion();
 		IMap<String, List<String>> inventario = tienda.getInventario();
 		
+		//Se crea el menu con las opciones
         while (correr) {
             System.out.println("\n Tienda \n");
 

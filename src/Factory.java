@@ -1,5 +1,9 @@
 import java.util.List;
 
+/**
+ * @author mario
+ *
+ */
 public class Factory {
 
 	public IMap<String, List<String>> mapType(Integer mapa) {

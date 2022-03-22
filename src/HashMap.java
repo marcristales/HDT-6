@@ -2,6 +2,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * @author mario
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class HashMap<K, V> implements IMap<K, V> {
 
 	private int CAPACITY = 10;

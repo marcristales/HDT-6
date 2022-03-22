@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author mario
+ *
+ */
 public class Tienda {
 
 	//Scanner
@@ -24,6 +28,10 @@ public class Tienda {
     private List<String> categorias = new ArrayList<String>();
 	
 	
+	/**
+	 * @param option
+	 * metodo para iniciar la clase de factory
+	 */
 	public void initFactory(int option) {
 		
 		this.coleccion = factory.mapType(option);
@@ -106,6 +114,9 @@ public class Tienda {
 	}
     
 	
+	/**
+	 * metodo para agregar productos
+	 */
 	public void agregarProducto() {
 		
 		Boolean agregar = true;
