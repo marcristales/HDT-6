@@ -58,7 +58,6 @@ public class Tienda {
 
 
 	public void readFile() {
-		
 		try 
 		{
 			file = new File(source);
@@ -89,7 +88,7 @@ public class Tienda {
 						inventario.put(categoria, lista);
 					} else
 					{
-						List<String> nuevaLista = inventario.get(categoria);
+						List<String> nuevaLista = new ArrayList<String>();
 						nuevaLista.add(producto);
 						inventario.put(categoria, nuevaLista);
 						categorias.add(categoria);
@@ -105,6 +104,7 @@ public class Tienda {
 		}
 		
 	}
+    
 	
 	public void agregarProducto() {
 		
@@ -167,7 +167,7 @@ public class Tienda {
                 System.out.println("\n-> " + categorias.get(i));
 
                 for (int e = 0; e < products.size(); e++) {
-                    System.out.println("  - " + products.get(e) + "| 1");
+                    System.out.println("ï¿½ï¿½- " + products.get(e) + "| 1");
                 }
 
             }
