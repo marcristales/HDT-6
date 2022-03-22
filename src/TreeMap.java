@@ -14,6 +14,7 @@ public class TreeMap<K, V> implements IMap<K, V> {
     private MapBucket2[] bucket;
     private int size = 0;
 
+    
     public TreeMap() {
         this.bucket = new MapBucket2[CAPACITY];
     }
@@ -33,6 +34,8 @@ public class TreeMap<K, V> implements IMap<K, V> {
         return null;
     }
 
+    
+    //si la key ya existe, se actualiza el valor de esa key, de caso contrario, se agrega al bucket
     public void put(K key, V value) {
         if (containsKey(key)) {
             Entry2 entry = getEntry(key);
@@ -47,10 +50,13 @@ public class TreeMap<K, V> implements IMap<K, V> {
         }
     }
 
+    
+    //Validar si existe la key, regresar data
     public V get(K key) {
         return containsKey(key) ? (V) getEntry(key).getValue() : null;
     }
 
+    //chequea si la bucket es nula, sino, la bucket tiene esa llave
     public boolean containsKey(K key) {
         int hash = getHash(key);
         return !(Objects.isNull(bucket[hash]) || Objects.isNull(getEntry(key)));
@@ -71,6 +77,7 @@ public class TreeMap<K, V> implements IMap<K, V> {
 }
 
 
+//Se crea un bucket para guardar todos los key values
 class MapBucket2 {
     private List<Entry2> entries;
 

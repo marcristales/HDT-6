@@ -6,6 +6,12 @@ import java.util.List;
  */
 public class Factory {
 
+	//se crea un metodo de interfaz IMap para crear la clase de factory.
+	//Factory permite que las subclases decidan que objeto instanciar.
+	/**
+	 * @param mapa
+	 * @return el objeto instanciado
+	 */
 	public IMap<String, List<String>> mapType(Integer mapa) {
 
 		switch (mapa) {
