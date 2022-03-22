@@ -31,6 +31,32 @@ public class Tienda {
 		
 	}
 	
+	
+	
+	public IMap<String, List<String>> getColeccion() {
+		return coleccion;
+	}
+
+
+
+	public void setColeccion(IMap<String, List<String>> coleccion) {
+		this.coleccion = coleccion;
+	}
+
+
+
+	public IMap<String, List<String>> getInventario() {
+		return inventario;
+	}
+
+
+
+	public void setInventario(IMap<String, List<String>> inventario) {
+		this.inventario = inventario;
+	}
+
+
+
 	public void readFile() {
 		
 		try 
@@ -45,9 +71,9 @@ public class Tienda {
 		
 		try 
 		{
-			String texto = br.readLine();
+			String texto;
 			
-			while (texto != null) {
+			while ((texto = br.readLine()) != null) {
 				
 				String[] productos = texto.replace("|", "-").split("-");
 				String categoria = productos[0].trim().toUpperCase();
